@@ -1,6 +1,9 @@
 include "1_FortranBase.f90"
-Program Main
-    call FortranBase()
+include "2_DayOfYear.f90"
+
+PROGRAM Main
+    CALL FortranBase()
+    CALL DayOfYear()
     write(*,*) "Hello, world!"
-end
+ENDPROGRAM
    
