@@ -8,7 +8,7 @@ SUBROUTINE sub1(i,j)
     implicit none
     INTEGER,intent(inout) :: i,j
     INTEGER :: array(5)
-    
+    WRITE(*,*) "This a scope function!"
     WRITE(*,*) "6nd",i, j
     WRITE(*,*)
     CALL sub2()
