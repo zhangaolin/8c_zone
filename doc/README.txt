@@ -1,4 +1,5 @@
 README.TXT
+branch xudongyu
 在cache的文件夹内进行cmake的操作
 操作命令如下
 cmake -G "Unix Makefiles" ../../The-Development-of-Nuclear-code-
