@@ -1,9 +1,9 @@
 include "ModuleType.f90"
     
 SUBROUTINE ModuleTest()
-    use person_type_moudle
-    use student_type_moudle
-    use teacher_type_moudle
+    use person_type_module
+    use student_type_module
+    use teacher_type_module
 
     implicit NONE
 

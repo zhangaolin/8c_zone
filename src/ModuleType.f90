@@ -1,4 +1,4 @@
-MODULE person_type_moudle
+MODULE person_type_module
     IMPLICIT NONE 
     PRIVATE
 
@@ -29,25 +29,27 @@ MODULE person_type_moudle
         CHARACTER(len = *) :: sex
         INTEGER            :: age
         
-        INTEGER :: nerror = 0
-        
+        INTEGER :: nerror1 = 0
+        nerror1 = 0
         IF(.not.(TRIM(sex) == "man" .or. TRIM(sex) == "woman")) THEN
             WRITE(*,*) "ERROR: sex is not man nor woman"
-            nerror =  nerror + 1
+            nerror1 =  nerror1 + 1
         ENDIF
 
         IF(age<0 .or. age>150) THEN
             WRITE(*,*) "ERROR: age is less than 0 or large than 150"
-            nerror = nerror + 1
+            nerror1 = nerror1 + 1
         ENDIF
 
-        IF(nerror == 0 ) THEN
+        IF(nerror1 == 0 ) THEN
             this%name = name
             this%sex = sex
             this%age = age
         ELSE
+            this%name = ""
+            this%sex = ""
+            this%age = -1
             WRITE(*,*) "please check the inputs of set_info(), some wrong input is provided"
-            STOP 999
         ENDIF
     ENDSUBROUTINE
 
@@ -58,10 +60,10 @@ MODULE person_type_moudle
         this%age = -1
     ENDSUBROUTINE
 
-ENDMODULE person_type_moudle
+ENDMODULE person_type_module
         
-MODULE student_type_moudle
-    USE person_type_moudle
+MODULE student_type_module
+    USE person_type_module
 
     IMPLICIT NONE
     PRIVATE
@@ -93,10 +95,10 @@ MODULE student_type_moudle
     ENDSUBROUTINE
 
 
-ENDMODULE student_type_moudle
+ENDMODULE student_type_module
 
-MODULE teacher_type_moudle
-    USE person_type_moudle
+MODULE teacher_type_module
+    USE person_type_module
     IMPLICIT NONE
     PRIVATE
 
@@ -124,5 +126,6 @@ MODULE teacher_type_moudle
         this%sex = ""
         this%age = -1
         this%office = ""
+    ENDSUBROUTINE
 
-ENDMODULE teacher_type_moudle
+ENDMODULE teacher_type_module
