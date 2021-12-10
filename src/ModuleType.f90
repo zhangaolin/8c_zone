@@ -5,11 +5,12 @@ MODULE person_type_moudle
     PUBLIC :: person 
 
     TYPE :: person
-      CHARACTER(len = 32) :: name = ""
-      CHARACTER(len = 12) :: sex = ""
-      INTEGER             :: age
+      CHARACTER(len = 32) :: name = "" ! init the name
+      CHARACTER(len = 12) :: sex = ""  ! init the sex
+      INTEGER             :: age       ! init the age
     CONTAINS 
         PROCEDURE, PASS :: set_info
+        PROCEDURE, PASS :: remove_info
         PROCEDURE, PASS :: print_my_duty
     ENDTYPE
     CONTAINS 
@@ -49,7 +50,15 @@ MODULE person_type_moudle
             STOP 999
         ENDIF
     ENDSUBROUTINE
-    ENDMODULE
+
+    SUBROUTINE remove_info(this)
+        CLASS(person) :: this
+        this%name =  ""
+        this%sex = ""
+        this%age = -1
+    ENDSUBROUTINE
+
+ENDMODULE person_type_moudle
         
 MODULE student_type_moudle
     USE person_type_moudle
@@ -63,6 +72,7 @@ MODULE student_type_moudle
         CHARACTER(len = 10) :: dorm = "EAST20-206"
     CONTAINS
         PROCEDURE, PASS :: print_my_duty
+        PROCEDURE, PASS :: remove_info
     ENDTYPE student
 
     CONTAINS
@@ -73,7 +83,17 @@ MODULE student_type_moudle
         WRITE(*,*) "student my duty is study! study!! study!!!"
         WRITE(*,*)
     ENDSUBROUTINE
-    ENDMODULE student_type_moudle
+
+    SUBROUTINE remove_info(this)
+        CLASS(student) :: this
+        this%name = ""
+        this%sex = ""
+        this%age = -1
+        this%dorm = ""
+    ENDSUBROUTINE
+
+
+ENDMODULE student_type_moudle
 
 MODULE teacher_type_moudle
     USE person_type_moudle
@@ -86,6 +106,7 @@ MODULE teacher_type_moudle
         CHARACTER(len = 32) :: office = "CHemical building 5th-floor"
     CONTAINS
         PROCEDURE, PASS :: print_my_duty
+        PROCEDURE, PASS :: remove_info
     ENDTYPE teacher
 
     CONTAINS
@@ -97,4 +118,11 @@ MODULE teacher_type_moudle
         WRITE(*,*) "teacher my duty is teach! teach!! teach!!!"
     ENDSUBROUTINE
 
-    ENDMODULE
+    SUBROUTINE remove_info(this)
+        CLASS(teacher) :: this
+        this%name = ""
+        this%sex = ""
+        this%age = -1
+        this%office = ""
+
+ENDMODULE teacher_type_moudle
