@@ -10,3 +10,4 @@ cd src/
 cd ../uTest
 ./test_person.exe
 ctest
+te
