@@ -13,12 +13,12 @@ module position_type_module
         procedure, pass :: clear
     endtype
 contains
-    subroutine initialize(this,x)
+    subroutine initialize(this,coordinates)
         class(position) :: this
-        real            :: x
+        real            :: coordinates(3)
         
-        if (x /= 0) then
-            this%x = x
+        if (coordinates(1) /= 0) then
+            this%x = coordinates(1)
         else
             write(*,*) "the x is error! "
         endif
