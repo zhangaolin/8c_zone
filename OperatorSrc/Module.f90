@@ -7,7 +7,7 @@ MODULE operator_type_module
     TYPE :: operator
       REAL        :: x = 0.0       ! init the x
       REAL        :: y = 0.0       ! init the y
-      INTEGER     :: result = 0.0  ! init the result
+      REAL        :: result = 0.0  ! init the result
     CONTAINS 
         PROCEDURE, PASS :: set_info
         PROCEDURE, PASS :: solve
@@ -16,15 +16,15 @@ MODULE operator_type_module
     ENDTYPE
     CONTAINS 
     SUBROUTINE print_result(this)
-        CLASS(opeator) :: this
+        CLASS(operator) :: this
 
-        WRITE(*,*) "the result is ", this%reslut
+        WRITE(*,*) "the result is ", this%result
 
     ENDSUBROUTINE
     subroutine set_info(this,x,y)
         CLASS(operator) :: this
-        REAL        :: x = 0.0       ! init the x
-        REAL        :: y = 1.0 
+        REAL        :: x      ! init the x
+        REAL        :: y
 
         this%x = x
         this%y = y
@@ -51,5 +51,5 @@ MODULE operator_type_module
         this%y = 1.0
         this%result = 0.0
     ENDSUBROUTINE
-    
+
 ENDMODULE operator_type_module
