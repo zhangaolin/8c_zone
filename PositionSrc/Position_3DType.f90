@@ -21,7 +21,7 @@ subroutine initialize(this,coordinates)
     real            :: coordinates(3)
     
     if ((coordinates(1) < 0) .and. (coordinates(2) < 0) &
-    .and. (coorinates(3) < 0)) then
+    .and. (coordinates(3) < 0)) then
         this%x = coordinates(1)
         this%y = coordinates(2)
         this%z = coordinates(3)
