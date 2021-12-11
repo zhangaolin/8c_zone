@@ -53,3 +53,33 @@ MODULE operator_type_module
     ENDSUBROUTINE
 
 ENDMODULE operator_type_module
+
+module operator_plus_type_module
+    use operator_type_module
+    implicit none
+    PRIVATE
+
+    PUBLIC :: operator_plus
+
+    TYPE, extends(operator) :: operator_plus
+        
+    CONTAINS
+        PROCEDURE, PASS :: set_info
+    ENDTYPE operator_plus
+
+    CONTAINS
+
+    subroutine set_info(this,x,y)
+        CLASS(operator_plus) :: this
+        REAL        :: x      ! init the x
+        REAL        :: y
+        if((x>0) .and. (y>0))then
+            this%x = x
+            this%y = y
+        else
+            write(*,*) "the plus calss is need the x and y > 0"
+        endif    
+    ENDSUBROUTINE
+
+    
+end module operator_plus_type_module
