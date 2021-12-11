@@ -45,7 +45,11 @@ MODULE operator_type_module
             write(*,*) "The method is error!"
         endif
     ENDSUBROUTINE
+    subroutine clear(this)
+        CLASS(operator) :: this
+        this%x = 0.0
+        this%y = 1.0
+        this%result = 0.0
+    ENDSUBROUTINE
     
-
-
 ENDMODULE operator_type_module
