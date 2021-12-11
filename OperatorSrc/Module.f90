@@ -83,3 +83,32 @@ module operator_plus_type_module
 
     
 end module operator_plus_type_module
+
+module operator_devide_type_module
+    use operator_type_module
+    implicit none
+    PRIVATE
+
+    PUBLIC :: operator_devide
+
+    TYPE, extends(operator) :: operator_devide
+        
+    CONTAINS
+        PROCEDURE, PASS :: set_info
+    ENDTYPE operator_devide
+
+    CONTAINS
+
+    subroutine set_info(this,x,y)
+        CLASS(operator_devide) :: this
+        REAL        :: x      ! init the x
+        REAL        :: y
+        if((x /= 0) .and. (y /= 0))then
+            this%x = x
+            this%y = y
+        else
+            write(*,*) "the devide calss is need the x and y != 0"
+        endif    
+    ENDSUBROUTINE
+    
+end module operator_devide_type_module
