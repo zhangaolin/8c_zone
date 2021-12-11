@@ -1,4 +1,4 @@
-include "PositionType.f90"
+
 module position_2D_type_module
     use position_type_module
     implicit none
@@ -7,7 +7,7 @@ module position_2D_type_module
     public :: position_2D 
 
     type, extends(position) :: position_2D 
-        real :: y = 0.0
+        real :: y
     contains
         procedure, pass :: initialize
         procedure, pass :: calculate_distance

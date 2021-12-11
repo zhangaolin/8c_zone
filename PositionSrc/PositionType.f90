@@ -5,8 +5,8 @@ module position_type_module
     public :: position 
 
     type :: position
-        real  :: x = 0.0
-        real  :: distance = 0.0
+        real  :: x
+        real  :: distance
     contains
         procedure, pass :: initialize
         procedure, pass :: calculate_distance
