@@ -1,5 +1,6 @@
 include "PositionType.f90"
 include "Position_2DType.f90"
+include "Position_3DType.f90"
 
 program Main
     use position_type_module
