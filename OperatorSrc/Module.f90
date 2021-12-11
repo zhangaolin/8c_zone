@@ -5,13 +5,14 @@ MODULE operator_type_module
     PUBLIC :: operator
 
     TYPE :: operator
-      REAL        :: x = 0.0 ! init the name
-      REAL        :: y = 0.0  ! init the sex
-      INTEGER     :: age       ! init the age
+      REAL        :: x = 0.0       ! init the x
+      REAL        :: y = 0.0       ! init the y
+      INTEGER     :: result = 0.0  ! init the result
     CONTAINS 
         PROCEDURE, PASS :: set_info
-        PROCEDURE, PASS :: remove_info
-        PROCEDURE, PASS :: print_my_duty
+        PROCEDURE, PASS :: solve
+        PROCEDURE, PASS :: print_result
+        PROCEDURE, PASS :: clear
     ENDTYPE
 
 ENDMODULE operator_type_module
