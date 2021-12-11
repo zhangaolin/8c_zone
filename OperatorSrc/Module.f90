@@ -5,9 +5,9 @@ MODULE operator_type_module
     PUBLIC :: operator
 
     TYPE :: operator
-      REAL        :: x = 0.0       ! init the x
-      REAL        :: y = 0.0       ! init the y
-      REAL        :: result = 0.0  ! init the result
+      REAL        :: x = 1.0       ! init the x
+      REAL        :: y = 1.0       ! init the y
+      REAL        :: result = 1.0  ! init the result
     CONTAINS 
         PROCEDURE, PASS :: set_info
         PROCEDURE, PASS :: solve
@@ -47,7 +47,7 @@ MODULE operator_type_module
     ENDSUBROUTINE
     subroutine clear(this)
         CLASS(operator) :: this
-        this%x = 0.0
+        this%x = 1.0
         this%y = 1.0
         this%result = 0.0
     ENDSUBROUTINE
