@@ -7,5 +7,6 @@ SET(SOURCE_FILES
 #   6_Pointer.f90
 #   7_Module.f90
 #   ModuleType.f90
+#   the files included is not inculde in thsi file
    )
 ADD_EXECUTABLE(position ${SOURCE_FILES})
