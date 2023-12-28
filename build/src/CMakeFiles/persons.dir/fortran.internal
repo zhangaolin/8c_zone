@@ -1,0 +1,5 @@
+# The fortran modules provided by this target.
+provides
+ person_type_module.mod
+ student_type_module.mod
+ teacher_type_module.mod
